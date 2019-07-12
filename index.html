@@ -1,0 +1,857 @@
+<!--
+  Adopted from UW CSE154 Courses
+
+  Modified by Weiqi Feng. 
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lecture 2 - HTML and CSS</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="./css/reveal.css">
+  <link rel="stylesheet" href="./css/white.css" id="theme">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <!-- <link rel="stylesheet" href="../../site/reveal/lib/css/zenburn.css">-->
+  <link rel="stylesheet" href="./css/color-brewer.css">
+  <link rel="stylesheet" href="./css/154-override.css">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? './css/pdf.css' :
+      './css/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+</head>
+
+<body>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <section>
+        <h2>Hello world!</h2>
+          <p>Today, I will give a brief introducion of myself</p>
+          <ul>
+            <li>
+              My name is ...
+            </li>
+            <li>
+              I am second-year CS student in SJTU. 
+            </li>
+            <li>
+              I love coding!
+            </li>
+          </ul>
+      </section>
+
+      <section>
+        <h1>CSE 154</h1>
+        <h3>Lecture 2: More HTML, Accessible design</h3>
+      </section>
+
+      <section>
+        <h2>Today's Agenda</h2>
+        <p>Administrivia</p>
+        <p>Discuss Accessible Design</p>
+        <p>Finish discussing HTML</p>
+        <p class="space-left fragment">Yes really! <p>
+        <p class="space-left fragment">but you should not feel like you will know everything yet</p>
+        <p class="space-left fragment">and we do learn more as we delve deeper into CSS and JS</p>
+        <p class="fragment">Start CSS</p>
+      </section>
+
+      <section>
+        <h3>But first...</h3>
+        <h2 class="fragment">Should you take this course?!?!?</h2>
+        <p class="fragment">Answer yes if...</p>
+        <ul>
+          <li class="fragment">You are really curious about how web sites work</li>
+          <li class="fragment">You are ready to learn several different languages and technologies
+            within a 10-week quarter with structure, resources, and support of a
+            CSE course (as opposed to resource-overload on the web)
+          </li>
+          <li class="fragment">You want to learn a bit about the human connection to web development</li>
+        </ul>
+        <p class="fragment">Answer no if... </p>
+        <ul>
+          <li class="fragment">
+            You are not willing too put in the effort befitting of a
+            rigourous 5 credit course in computer science.
+          </li>
+          <li class="fragment">
+            You do not plan to come to sections, use course read the course materials,
+            or use other resources that are available to help you succeed
+          </li>
+          <li class="fragment">You only want to use this course as a way "get into CSE"</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Administrivia</h2>
+        <p><a href="../../calendar/wpl.html">WPL</a> starts today after class (SIG 228)
+        <p>Sections</p>
+        <ul class="no-bullets">
+          <li>Sections will reinforce learning from lectures</li>
+          <li>Quick checks in Tuesday section starting next week</li>
+          <li>Attend the section you are signed up for!</li>
+        </ul>
+        <p>
+          Atom with Git (and cloning!)
+        </p>
+        <ul class="no-bullets">
+          <li>
+             Atom/Git Set Up guides updated (which can be found
+              <a href="https://courses.cs.washington.edu/courses/cse154/19sp/resources/setup.html">here</a>)
+              to include git clone using ssh instead of https
+          </li>
+          <li><strong>Do not change anything you have already set up for CP 1</strong></li>
+          <li>Our lab staff would prefer if we use ssh </li>
+        </ul>
+
+        <aside class="notes">
+          <p>If students start showing up for another TA's section, that's not fair to the other TA -
+            one TA (like the 8:30 am TA) may wind up with 12 people in the room and the 11:30 am
+            TA could wind up with 30. It's not fair to the students who ARE registered.</p>
+          <p>It also keeps the student from having a relationship with the TA who will be grading their work.</p>
+          <p>Their is also the question of grading the section or lab work. If a student
+            turns in a quick check to the not-registered-for-class, that TA has now extra work to
+            get that piece of paper to the registered-for-class TA. That paper could get lost.
+            Not good.</p>
+          <p>Students must go to their own sections. If there is a *one time* change - i.e. a
+            Very Important Appointment where a student has to switch, then that student must
+            email the existing TA AND the TA for the temporary section and get approval BEFORE
+            the section meets. </p>
+        </aside>
+      </section>
+
+      <section>
+        <h2>Think-Pair-Share</h2>
+        <div class="side-by-side">
+          <h2>What website would you build if you already knew "enough" about web programming? </h2>
+          <p>I love Isabella!</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Assignments</h2>
+        <h3>Creative Project 1</h3>
+        <p class="space-left">Due: Saturday, April 6, 11:00 pm</p>
+        <p class="space-left">GitGrade Lock: April 7, 11:00 pm</p>
+        <p class="space-left"><a href="../../creative/creative-projects.html" target="_blank">Creative Project Page</a> </p>
+        <p class="space-left"><a href="https://courses.cs.washington.edu/courses/cse154/18au/creative/showcase.html" target="_blank">Sample showcase from 18au</a></p>
+        <h3>Homework 1</h3>
+        <p class="space-left">Due: Thursday, April 11, 11:00 pm</p>
+        <p class="space-left">GitGrade Lock: Sunday April 14, 11:00 pm</p>
+        <p class="space-left"><a href="../../homework/homework.html" target="_blank">Homework Page</a> </p>
+        <p class="fragment">Also a reminder to sign up for
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeCg2t80tXlrwK54vh6JGfs2AHrMo3d60eJN9xozRhLJa5Uvg/viewform"> Mentor
+            Circles</a> by Friday! (but the sooner the better)</p>
+      </section>
+
+
+
+      <section>
+        <h2>Review: Internet</h2>
+        <div class="side-by-side">
+          <div>
+            <p>Things that are relevant</p>
+            <ul>
+              <li>There are layers</li>
+              <li>IP = Internet Protocol, addresses like 192.168.0.1</li>
+              <li>No centralized control but...
+                <ul>
+                  <li>DNS maps the numbers to names like Google.com</li>
+                  <li><strong>W3C Validates web pages</strong></li>
+                </ul>
+              </li>
+              <li>Websites use a client-server model over the Internet</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <section>
+          <h2>Review: Websites</h2>
+          <div>
+            <div style="width:25%;  position:absolute; left:0%;" >
+              <p class="fragment"><strong>Content</strong></p>
+              <div class="fragment">
+                <p class="medium-small-font">Words and images</p>
+              </div>
+            </div>
+            <div style="width:25%;  position:absolute; left:25%;" >
+              <p class="fragment"><strong>Structure</strong></p>
+              <div class="fragment">
+                <p class="medium-small-font">HTML</p>
+              </div>
+            </div>
+            <div style="width:25%;  position:absolute; left:50%;" >
+              <p class="fragment"><strong>Style</strong></p>
+              <div class="fragment">
+                <p class="medium-small-font">CSS</p>
+              </div>
+            </div>
+            <div style="width:23.2%;  position:absolute; left:75%;" >
+              <p class="fragment"><strong>Behavior</strong></p>
+              <div class="fragment">
+                <p class="medium-small-font">Javascript &amp; Server programs</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="side-by-side">
+            <div style="width:25%;  position:absolute; left: 10%;">
+            </div>
+            <div>
+              <h1 style="margin-top: 400px">HTML</h1>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Hypertext Markup Language (<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML">HTML</a>)</h2>
+
+          <p>
+            Describes the <em>content</em> and <em>structure</em> of information on a web page
+            <ul>
+              <li>Not the same as the <em>presentation</em> (appearance on screen)</li>
+            </ul>
+          </p>
+
+          <p>Surrounds text content with opening and closing <strong>tags</strong></p>
+          <p>
+            Each tag's name is called an <strong>element</strong>
+            <ul>
+              <li>Syntax:
+                <code>
+  									<strong>&lt;element&gt;</strong> content <strong>&lt;/element&gt;</strong>
+  								</code>
+              </li>
+              <li>Example:
+                <code>
+  									<strong>&lt;p&gt;</strong>This is a paragraph<strong>&lt;/p&gt;</strong>
+  								</code>
+              </li>
+            </ul>
+          </p>
+          <p>Most whitespace is insignificant in HTML (ignored or collapsed to a single space)</p>
+          <p>We will use a newer version called HTML5</p>
+        </section>
+
+        <section>
+          <h2>Structure of an HTML Page</h2>
+          <pre><code class="hljs" data-trim>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    information about the page
+  &lt;/head&gt;
+  &lt;body&gt;
+    page contents
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p class="code-caption">HTML</p>
+
+          <p>
+            The <code>&lt;head&gt;</code> tag describes the page and the <code>&lt;body&gt;</code> tag contains the page's content
+          </p>
+          <p>An HTML page is saved into a file ending with extension <code>.html</code></p>
+          <p>
+            The <code>DOCTYPE</code> tag tells the browser to interpret our page's code as HTML5, the lastest/greatest version of the language
+          </p>
+        </section>
+
+        <section>
+          <h2>HTML Tags</h2>
+          <p> There are many different types of HTML tags used to structure web pages (we can't possibly cover all of them within lecture). </p>
+          <p>A comprehensive list is
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">here</a> (it's a great bookmark page for reference this quarter!) </p>
+          <p>Unless otherwise specified, all of the tags listed are required to be in the <code>&lt;body&gt;</code> of an HTML page rather than the <code>&lt;head&gt;</code>
+          </p>
+          <p>Our compiled list is <a href="../lec01-intro-html/#/36">here</a> and
+            <a href="../lec01-intro-html/#/36/1">here</a>
+            <p>
+        </section>
+
+      </section>
+
+
+      <section>
+        <h2>A few details</h2>
+        <ol>
+          <li>
+            HTML is a subset of Extensible Markup Language (XML)
+            (<a href="https://softwareengineering.stackexchange.com/questions/93296/relation-and-differences-between-sgml-xml-html-and-xhtml">more info</a>)
+          </li>
+          <li>Tags that start with <code>&lt;! </code> like is <code>&lt;!DOCTYPE html&gt;</code> is considered
+            <a href="https://teamtreehouse.com/community/what-is-the-bang-for-at-the-beginning-of-the-html-5-doctype"> Markup
+                Declaration</a>
+          </li>
+          <li>
+            Self-closing tags like Horizontal Rule
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr"><code>&lt;hr&gt;</code></a>
+            can either have the slash in the tag or not, but <strong>BE CONSISTENT IN YOUR
+              CODE</strong>.
+          </li>
+        </ul>
+            <pre><code class="hljs">&lt;hr /&gt;
+
+&lt;hr&gt;</code></pre>
+            <p class="code-caption">Two (equivalent) examples of the self-closing horizontal rule
+            tag (HTML)</p>
+        <p>
+          Q: The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">img</a> tag is 
+          another self-closing tag. What characteristics do these two
+          tags have that make them appropriate as "self-closing" compared to content-holding tags
+          like the paragraph tag?
+        </p>
+      </section>
+
+      <section>
+        <h2>HTML vs Rendered Web Page</h2>
+        <div class="side-by-side">
+          <pre><code class="hljs" data-trim>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;About Me: Nicole Riley&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;About Me: Nicole Riley&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;article&gt;
+        &lt;p&gt;Hello, everyone! My name is ......&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/main&gt;
+
+      ...
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </section>
+
+
+      <section>
+        <h2>Attributes</h2>
+        <p>Some tags can contain additional information called <strong>attributes</strong></p>
+        <ul>
+          <li>Syntax: <br /><code class="medium-small-font">&lt;element
+                    attribute=&quot;value&quot;
+                    attribute=&quot;value&quot;&gt;
+                    <var>content</var> &lt;/<var>element</var>&gt;</code></li>
+          <li>Example: <br />
+            <code class="medium-small-font">&lt;a href="page2.html"&gt;Next page&lt;/a&gt;</code></li>
+        </ul>
+        <p class="fragment">Where else did you see attributes yesterday?</p>
+
+        <pre class="fragment"><code class="hljs">&lt;html lang=&quot;en&quot;&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;img src=&quot;&quot; alt=&quot;insert descriptive text for screenreaders&quot; /&gt;
+&lt;img src=&quot;&quot; alt=&quot;insert descriptive text for screenreaders&quot; /&gt;
+</code></pre>
+      </section>
+
+      <section>
+        <h1>Accessible Design</h1>
+        <h3>Slides based on content from Profs. Richard Ladner, Jake Wobbrock, and Andy Ko.</h3>
+      </section>
+
+      <section>
+        <h2>Disabilities</h2>
+        <p>Everyone has different abilities</p>
+        <p>Nearly 1 in 5 people have a disability in the U.S. (from the <a href="https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html">U.S. Census</a>)</p>
+
+      </section>
+
+      <section>
+        <h2>(Some) kinds of disabilities</h2>
+        <p>from <a href="https://www.w3.org/WAI/people-use-web/abilities-barriers/">W3C
+          Web Accessiblity Initiative (WAI)</a></p>
+        <div style="float:left;">
+          <ul>
+            <li>Visual
+              <ul>
+                <li>Blind</li>
+                <li>Low-Vision</li>
+                <li>Color Blind</li>
+              </ul>
+            </li>
+            <li>Auditory
+              <ul>
+                <li>Deaf</li>
+                <li>Hard of Hearing</li>
+              </ul>
+            </li>
+            <li>Speech
+              <ul>
+                <li>Ability to speak</li>
+                <li>Speech impediments</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div style="float:right;">
+          <ul>
+            <li>Physical
+              <ul>
+                <li>Ability to Walk</li>
+                <li>Ability to use limbs</li>
+              </ul>
+            </li>
+            <li>Cognitive, learning, and neurological
+              <ul>
+                <li>Dyslexia, dysgraphia, dyscalculia</li>
+                <li>ADHD</li>
+                <li>Memory loss</li>
+                <li>Learning disabilities</li>
+              </ul>
+            </li>
+            <li>Behavioral
+              <ul>
+                <li>Bipolar</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Temporary and Situational Disability</h2>
+        <p>Disabilties can be temporary</p>
+        <ul>
+          <li>having a broken arm in a cast</li>
+          <li>difficulty hearing after a loud concert</li>
+        </ul>
+        <p>Disabilties can be situational</p>
+          <ul>
+            <li>trying to open your door while carrying groceries</li>
+            <li>trying to talk on the phone in a noisy room</li>
+            <li>trying to read your phone under direct sunlight</li>
+          </ul>
+        <p>Disability affects all of us</p>
+      </section>
+
+      <section>
+        <h2>Accessible Design</h2>
+        <p>Designs that account for all abilities are called accessible designs</p>
+      </section>
+
+      <section>
+        <h2>Try your phone's screen reader!</h2>
+        <p>Enable your phone's screen reader</p>
+        <ul>
+          <li>iOS: Settings &gt; General &gt; Accessibility &gt; VoiceOver &gt; Hit the switch</li>
+          <li>Android: Settings &gt; Accessibility &gt; Talkback &gt; Hit the switch</li>
+        </ul>
+        <p>Input works differently now. For example, tap now reads the screen and double-tap selects. Use two or three fingers to scroll by page. Play with it for a minute.</p>
+        <p>Try closing your eyes and reading a webpage or a social networking site. Try writing an email.</p>
+      </section>
+
+      <section>
+        <h2>Views of disabilities</h2>
+        <p>Medical view</p>
+          <ul>
+            <li>Disabled people are patients who need treatment and/or cure.</li>
+          </ul>
+          <p> Legal view</p>
+          <ul>
+            <li>Disabled people have rights and responsibilities, such as access to public buildings, voting, education, etc.</li>
+            <li>
+              <a href="https://www.nytimes.com/2019/02/18/arts/design/blind-lawsuits-art-galleries.html">Lawsuits</a>
+               can occur, but they should not be the motivating factor for making a system
+              accessible
+          </ul>
+          <p> Sociocultural view</p>
+          <ul>
+            <li>Variation in ability is natural. "Disability" is caused by how society is designed, not by nature.</li>
+            <li>Building for inclusion builds innovation (e.g., curb cuts, close captioning)</li>
+          </ul>
+      </section>
+
+      <section>
+        <section>
+          <h2><a href="https://en.wikipedia.org/wiki/Universal_design">Universal Design</a></h2>
+          <p>Design for as many users as possible, not just the average user</p>
+          <p>Example: Airplane cockpits:</p>
+          <ul>
+            <li>In 1952, the U.S. Air Force redesigned seats to fit the average pilot.</li>
+            <li>They fit nobody (nobody is actually average), training results dropped.</li>
+            <li>Redesigned seat to be configurable for any pilot; training results rose above previous levels.</li>
+          </ul>
+          <p>Universal Design is often used in architecture</p>
+        </section>
+        <section>
+          <h2><a href="http://universaldesign.ie/What-is-Universal-Design/The-7-Principles/">Universal Design Principles</a></h2>
+          <ol>
+            <li>Equitable use</li>
+            <li>Flexibilty in use</li>
+            <li>Simple and intuitive</li>
+            <li>Perceptible information</li>
+            <li>Tolerance for error</li>
+            <li>Low physical effort</li>
+            <li>Size and space for approach and use</li>
+          </ol>
+        </section>
+
+
+        <section>
+          <h2><a href="https://www.eecs.harvard.edu/~kgajos/papers/2011/wobbrock11abd.pdf">Ability Based Design</a></h2>
+          <p>Instead of focusing on the abilities that someone lacks (<em>dis</em>-ability), and trying to compensate</p>
+          <p>Focus on making systems work with what abilities people have</p>
+          <p>Make the system adapt to the abilities of the user</p>
+        </section>
+
+        <section>
+          <h2><a href="http://universaldesign.ie/What-is-Universal-Design/The-7-Principles/">Ability Based Design Principles</a></h2>
+          <ol>
+            <li>Focus on <strong>Ability</strong>, not dis-ability.</li>
+            <li><strong>Accountability</strong>: If user has difficulty, system changes.</li>
+            <li><strong>Adaptation</strong>: Interface may be self-adaptive or user-adaptable.</li>
+            <li><strong>Transparency</strong>: Give user awareness of adaptations</li>
+            <li><strong>Performance</strong>: System may monitor users' performance</li>
+            <li><strong>Context</strong>: System may sense context</li>
+            <li><strong>Commodity</strong>: System may be affordable</li>
+          </ol>
+          <p>First two are required, other five are recommended</p>
+        </section>
+      </section>
+
+
+
+      <section>
+        <h2>Tools and Resources</h2>
+        <p>From the A11y Project</p>
+        <ul class="medium-small-font">
+          <li>
+            A really great <a href="https://a11yproject.com/resources"onkeyup="">compendium of
+            resources</a>
+          </li>
+          <li>
+            An <a href="https://ghc-2018-web-a11y.github.io">accessibility workshop</a> from GHC'18
+          </li>
+        </ul>
+        <p>Tools</p>
+        <ul class="medium-small-font">
+          <li>Web Accessability Evaluation Tool:
+            <a href="http://wave.webaim.org/">http://wave.webaim.org/</a>
+          </li>
+          <li>Color Schemes:
+            <a href="http://colorbrewer2.org/">http://colorbrewer2.org/</a>
+          </li>
+          <li>Color blindness checker:
+            <a href="http://www.color-blindness.com/coblis-color-blindness-simulator/">http://www.color-blindness.com/coblis-color-blindness-simulator/</a>
+          </li>
+          <li>Text readability:
+            <a href="http://juicystudio.com/services/readability.php">http://juicystudio.com/services/readability.php</a>
+          </li>
+        </ul>
+        <p>Resources</p>
+        <ul class="medium-small-font">
+          <li>Web Content Accessibility Guidelines (something to know about when you apply for jobs):
+            <a href="https://www.w3.org/WAI/intro/wcag">https://www.w3.org/WAI/intro/wcag</a>
+          </li>
+          <li>Teach Access Tutorial (general background and covers an important standard called ARIA).
+            <a href="http://teachaccess.org/initiatives/tutorial/">http://teachaccess.org/initiatives/tutorial/</a>
+          </li>
+          <li>Web design and development course by AccessComputing
+            <a href="http://www.washington.edu/accesscomputing/webd2/">http://www.washington.edu/accesscomputing/webd2/</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=HtTyRajRuyY&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&index=30">A11ycast </a> -
+              YouTube Videos to teach developers how accessibility works.
+        </ul>
+      </section>
+
+      <section>
+        <h1>Back to HTML</h1>
+      </section>
+
+      <section>
+        <h2>Semantic Tags</h2>
+        <h3>Discuss</h3>
+        <p>What did you learn from the readings?</p>
+        <ul>
+          <li>Name some of the HTML5 semantic tags</li>
+          <li>Why would we want to use a semantic tag for structuring our HTML document?</li>
+          <li>Did you see any semantic tags in your aboutme.html?</li>
+          <li>
+            Did you see anything in your aboutme.html that would help make your site
+            accessible?
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><code>article</code> vs <code>section</code></h2>
+        <p>We get this question a LOT</p>
+        <p>Others ask this <a href="https://stackoverflow.com/questions/7549561/section-vs-article-html5">too</a> </p>
+        <p>Here are two resources to help you:</p>
+        <ul>
+          <li>
+            <a href="https://iandevlin.com/blog/2011/04/html5/html5-section-or-article/">Ian Devlin article</a>
+            (a course reading)
+          </li>
+          <li>
+            <a href="https://www.youtube.com/watch?v=swWeWesZVZU">Youtube video</a>
+          </li>
+        </ul>
+        <p>Basically: <strong>Article should be standalone content. Section is not.</strong></p>
+        <p>
+          <strong>And remember:</strong> <code>div</code> div has no semantic meaning,
+          should only be added for selecting content in CSS/JS, and should be your "last resort"
+        </p>
+      </section>
+
+      <section>
+        <h2>Accessible Web Design Principles</h2>
+        <ul>
+          <li>Use document structure (Semantic) tags: e.g., <code>&lt;article&gt;</code>,
+            <code>&lt;strong&gt;</code></li>
+          <li>Don't use deprecated style tags like <code>&lt;b&gt;</code></li>
+          <li>Provide metadata: e.g., <code>&lt;html lang="en"&gt;</code></li>
+          <li>Provide alternatives: e.g., img alt tag, video captions, transcripts, allow both keyboard and mouse input</li>
+          <li>Avoid directional text: eg. "the diagram on the right shows..."</li>
+        </ul>
+        <p>Note: These design principles help in other ways as well</p>
+        <ul>
+          <li>Captions allow people to watch your video without turning sound on.</li>
+          <li>Transcripts help people find your page through Google.</li>
+          <li>Structure and metadata help programs understand your page.</li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h2>Use alt attributes on images</h2>
+
+        <p class="code-caption">HTML</p>
+        <div class="output">
+        <p class="output-caption">output</p>
+        </div>
+
+        <p>The <code>src</code> attribute specifies the image URL</p>
+        <p>HTML5 also requires an <code>alt</code> attribute describing the image, which
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">improves the web page
+          experience for all (if the image doesn't load)
+      </section>
+
+      <section>
+        <h2>Images and Links</h2>
+
+        <pre><code class="hljs" data-trim>&lt;a href=&quot;http://en.wikipedia.org/wiki/Koala/&quot;&gt;
+&lt;img src=&quot;images/irrelephant.jpg&quot; alt=&quot;Irrelephant elephant&quot;
+     title=&quot;dumbo!&quot; /&gt;
+&lt;/a&gt;</code></pre>
+        <p class="code-caption">HTML</p>
+
+        <div class="output">
+          <a href="http://en.wikipedia.org/wiki/Koala">
+          </a>
+          <p class="output-caption">output</p>
+        </div>
+
+        <p><strong>What's the title attribute?</strong></p>
+        <ul>
+          <li title="See? Even this bullet right here.">
+            <code>title</code> attribute is an optional tooltip (on ANY element)
+          </li>
+          <li title="Wah wahhhn programming is hard :(">
+            BUT the <code>title</code> attribute doesn't always work well for mobile and accessibility, so its usage and future are debated
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>A note about images that are links</h2>
+          <div>
+            <p>White space usually doesn't matter in HTML pages, except apparently here</p>
+            <p>Preview of <a href="lecture2source/imagelinktest.html">imagelinktext.html</a></p>
+          </div>
+      </section>
+
+
+
+      <section>
+        <h2>Review: Websites</h2>
+        <div>
+          <div style="width:25%;  position:absolute; left:0%;" >
+            <p class="fragment"><strong>Content</strong></p>
+            <div class="fragment">
+              <p class="medium-small-font">Words and images</p>
+            </div>
+          </div>
+          <div style="width:25%;  position:absolute; left:25%;" >
+            <p class="fragment"><strong>Structure</strong></p>
+            <div class="fragment">
+              <p class="medium-small-font">HTML</p>
+            </div>
+          </div>
+          <div style="width:25%;  position:absolute; left:50%;" >
+            <p class="fragment"><strong>Style</strong></p>
+            <div class="fragment">
+              <p class="medium-small-font">CSS</p>
+            </div>
+          </div>
+          <div style="width:23.2%;  position:absolute; left:75%;" >
+            <p class="fragment"><strong>Behavior</strong></p>
+            <div class="fragment">
+              <p class="medium-small-font">Javascript &amp; Server programs</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="side-by-side">
+          <div style="width:25%;  position:absolute; left: 5%;">
+          </div>
+          <div>
+            <h1 style="margin-top: 400px">CSS (preview)</h1>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>The Bad Way to Produce Styles</h2>
+        <pre>
+            <code class="hljs" data-trim>&lt;p&gt;
+  &lt;font face=&quot;Arial&quot;&gt;Welcome to Greasy Joe's.&lt;/font&gt;
+  You will &lt;b&gt;never&lt;/b&gt;, &lt;i&gt;ever&lt;/i&gt;, &lt;u&gt;EVER&lt;/u&gt; beat
+  &lt;font size=&quot;+4&quot; color=&quot;red&quot;&gt;OUR&lt;/font&gt; prices!
+&lt;/p&gt;</code></pre>
+        <p class="code-caption">HTML</p>
+        <div class="output">
+          <p>
+            <font face="Arial">Welcome to Greasy Joe's.</font>
+            You will <b>never</b>, <i>ever</i>, <u>EVER</u> beat
+            <font size="+4" color="red">OUR</font> prices!
+          </p>
+          <p class="output-caption">output</p>
+        </div>
+        <p>
+          Tags such as <code>b, i, u</code> and <code>font</code> are discouraged in strict HTML</p>
+        <p>Why is this bad?</p>
+        <ul class="medium-small-font">
+          <li class="fragment">Accessibility</li>
+          <li class="fragment">Code organization</li>
+          <li class="fragment">Changing style easily</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Cascading Style Sheets (CSS):
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link">&lt;link&gt;</a>
+        </h2>
+        <pre><code class="hljs" data-trim>&lt;head&gt;
+  ...
+  &lt;link href="filename" rel="stylesheet" /&gt;
+  ...
+&lt;/head&gt;</code></pre>
+        <p class="code-caption">HTML (template)</p>
+
+        <pre><code class="hljs" data-trim>&lt;link href="style.css" rel="stylesheet" /&gt;</code></pre>
+        <p class="code-caption">HTML (example)</p>
+        <p>
+          <strong>CSS</strong> describes the appearance and layout of information on a
+          web page (as opposed to HTML, which describes the content)
+        </p>
+        <p>
+          Can be embedded in HTML or placed into separate <code>.css</code>
+          file (preferred)
+        </p>
+      </section>
+
+      <section>
+        <h2>Basic CSS Rule Syntax</h2>
+        <pre><code class="hljs" data-trim>selector {
+  property: value;
+  property: value;
+  ...
+  property: value;
+}</code></pre>
+        <p class="code-caption">CSS (template)</p>
+
+        <pre><code class="hijs" data-trim>p {
+  color: red;
+  font-family: sans-serif;
+} </code></pre>
+        <p class="code-caption">CSS (example)</p>
+        <p>A CSS file consists of one or more rules</p>
+        <p>
+          A rule selector specifies HTML element(s) and applies style properties
+        </p>
+        <ul>
+          <li>A selector of <code>*</code> selects all elements</li>
+        </ul>
+      </section>
+
+
+    </div>
+  </div>
+  <script src="./js/head.min.js"></script>
+  <script src="./js/reveal.js"></script>
+
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [{
+          src: './js/classList.js',
+          condition: function() {
+            return !document.body.classList;
+          }
+        },
+        {
+          src: './js/marked.js',
+          condition: function() {
+            return !!document.querySelector('[data-markdown]');
+          }
+        },
+        {
+          src: './js/markdown.js',
+          condition: function() {
+            return !!document.querySelector('[data-markdown]');
+          }
+        },
+        {
+          src: './js/highlight.pack.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        },
+        { src: './js/zoom.js', async: true },
+        { src: './js/search.js', async: true },
+        { src: './js/printpdfbtn.js', async: true }
+      ]
+    });
+  </script>
+
+
+
+</body>
+
+</html>
+
